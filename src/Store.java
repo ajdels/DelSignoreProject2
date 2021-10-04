@@ -1,10 +1,46 @@
+import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Store {
-    private ArrayList<Order>;
-    private ArrayList<Customer>;
     public main(args:string{});
-    public runStore();
+    var filename = "customers.txt";
+    var CustomerNames = Paths.get(filename);
+    var customerNames = new ArrayList<String>();
+    var customerLines = Files.readAllLines(CustomerNames);
+    for (var line : customerLines){
+        var splitLine = line.split(",");
+        customerNames.add(splitLine[0]);
+
+    }
+    public void runStore() {
+        var inputReader = new Scanner(System.in);
+        while(true) {
+            printMenu();
+            var userChoice = inputReader.next();
+            switch (userChoice) {
+                case 1:
+                    System.exit(0);
+                case 2:
+                    addCustomer(inputReader);
+                    break;
+                case 3:
+                    System.out.print("Which Customer are you looking for?: ");
+                    var CustID = inputReader.nextInt();
+                    var customer = getCustomer(CustID);
+                    if (customer.isPresent()) {
+                        doCustomerMenu(inputReader, customer.get());
+
+                    } else
+                        System.out.print("No Customer Exists here");
+                    break;
+            }
+
+        }
+    }
+    private ArrayList<Order>;
+
+
     public makeOrder(address: ShippingAdress, cust:Customer);
     public Store();
     public addCustomer(): Customer;
