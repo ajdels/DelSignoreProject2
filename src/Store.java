@@ -35,15 +35,38 @@ public class Store {
                         System.out.print("No Customer Exists here");
                     break;
             }
+            public selectCustomer(); Customer;
+            System.out.println("Select a Customer: ");
+            var CustID = inputReader.nextInt();
+            if (customer.isPresent()) {
+                doCustomerMenu(inputReader, customer.get());
 
+            } else
+                System.out.print("No Customer Exists here");
+            break; }
+        public void manageCustomer(selectedCustomer: Customer);
+        var inputReader = new Scanner(System.in);
+        while(true) {
+            printMenu();
+            var userChoice = inputReader.next();
+            switch (userChoice) {
+                case 1:
+                    addAdress(inputReader);
+                    break;
+                case 2:
+                    makeOrder = new ArrayList<String>();
+                    makeOrder(inputReader);
+                    break; {
         }
+
     }
+
     private ArrayList<Order>;
 
 
     public makeOrder(address: ShippingAdress, cust:Customer);
     public Store();
     public addCustomer(): Customer;
-    public selectCustomer(); Customer;
+
     public manageCustomer(selectedCustomer: Customer);
 }
