@@ -64,9 +64,4 @@ public class Store {
     private ArrayList<Order>;
 
 
-    public makeOrder(address: ShippingAdress, cust:Customer);
-    public Store();
-    public addCustomer(): Customer;
 
-    public manageCustomer(selectedCustomer: Customer);
-}
